@@ -1,7 +1,9 @@
-require_relative './xrb'
+require_relative '../xrb'
 
-module XRB
-  class Label < Element
+module XRBExample
+  class Label < XRB::Element
+    include XRB::DOM
+
     def render
       DOM.label({class: 'thing'}, attributes[:text], children)
     end

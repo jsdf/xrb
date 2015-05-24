@@ -1,11 +1,13 @@
-require_relative './xrb'
+require_relative '../xrb'
 require_relative './label'
 
-module XRB
-  class Form < Element
+module XRBExample
+  class Form < XRB::Element
+    include XRB::DOM
+
     def render
       DOM.div(nil,
-        XRB::Label[{text: 'hiii'},
+        XRBExample::Label[{text: 'hiii'},
           'content here'
         ],
         'something else',
